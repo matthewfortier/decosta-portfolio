@@ -1,7 +1,7 @@
 .container {
     margin: 0;
     padding-left: 40%;
-    height: 100vh;
+    height: 100%;
     background: linear-gradient(#FFFFFF, #e5e5e5);
     
     .brand {
@@ -47,7 +47,7 @@
 }
 
 .static-photo {
-    position: absolute;
+    position: fixed;
     display: block;
     top: 0;
     left: 0;
@@ -155,4 +155,83 @@
     }
 }
 
-.grid-item { width: 200px; }
+.projects {
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    width: 100%;
+
+    .project {
+        float: left;
+        position: relative;
+        width: 46%;
+        padding-bottom: 40%;
+        margin: 1.9%;
+        box-shadow: 0 30px 40px -15px rgba(0,0,0,0.35);
+        cursor: pointer;
+        transition: all .2s ease-in-out;
+
+        .project-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background-size: cover;
+            background-position: center;
+            animation: zoomOut .2s ease-in-out;
+            z-index: 0;
+        }
+            
+
+        &:hover {
+            transform: scale(1.1);
+            transition: all .2s ease-in-out;
+
+            span:nth-child(3) {
+                display: block;
+                animation: fadeIn .2s ease-in-out;
+            }
+        }
+    }
+}
+
+footer {
+    height: 75px;
+    background-color: #394046;
+    text-align: center;
+    padding: 40px;
+
+    span {
+        text-align: center;
+        font-family: 'Roboto Slab', sans-serif;
+        font-size: 1.1em;
+        color: #ddd;
+    }
+
+    .social {
+        display: flex;
+        justify-content: center;
+        font-size: 28px;
+        color: #ddd;
+
+        .social-item {
+            margin: 15px;
+            height: 55px;
+            width: 55px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all .3s ease-in-out;
+            color: #ddd;
+            
+            &:hover {
+                background-color: darken(#394046, 5);
+                transition: all .3s ease-in-out;
+            }
+        }
+    }
+}
